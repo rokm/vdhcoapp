@@ -166,7 +166,9 @@ async function install_uninstall(uninstall = false) {
   } else if (platform == "linux") {
     let mode = GetMode();
     if (mode == "user") {
-      await PrepareFlatpak();
+      /* We manually disabled the flatpak support */
+      console.log("NOTE: Flatpak support is disabled in this build due to components being in system directories on host.");
+      /*await PrepareFlatpak();*/
     }
     SetupFiles("linux", mode, uninstall);
   } else {
