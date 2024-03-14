@@ -1,4 +1,4 @@
-import open from 'open';
+const open = (...args) => import('open').then(({default: open}) => open(...args));
 
 const os = require("os");
 const path = require('path');
