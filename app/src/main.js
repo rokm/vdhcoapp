@@ -10,7 +10,11 @@ function info() {
     binary: process.execPath,
     displayName: config.meta.name,
     description: config.meta.description,
-    target: config.target,
+    target: {
+      os: os.platform(),
+      arch: os.machine(),
+      node: process.version
+    },
     home: os.homedir() || ""
   };
   return converter.info().then((convInfo) => {
