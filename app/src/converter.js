@@ -15,16 +15,19 @@ const filepicker = findExecutableFullPath("filepicker", exec_dir);
 
 if (!fileExistsSync(ffmpeg)) {
   logger.error("ffmpeg not found. Install ffmpeg and make sure it's in your path.");
+  console.error("ffmpeg not found.");
   process.exit(1);
 }
 
 if (!fileExistsSync(ffprobe)) {
   logger.error("ffprobe not found. Install ffmpeg and make sure it's in your path.");
+  cnsole.error("ffprobe not found.");
   process.exit(1);
 }
 
 if (!fileExistsSync(filepicker)) {
   logger.error("filepicker not found.");
+  console.error("filepicker not found.");
   process.exit(1);
 }
 
