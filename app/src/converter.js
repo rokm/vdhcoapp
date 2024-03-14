@@ -11,7 +11,7 @@ const exec_dir = path.dirname(process.execPath);
 
 const ffmpeg = findExecutableFullPath("ffmpeg", exec_dir);
 const ffprobe = findExecutableFullPath("ffprobe", exec_dir);
-const filepicker = findExecutableFullPath("filepicker", exec_dir);
+const filepicker = findExecutableFullPath("vdhcoapp-filepicker", exec_dir);
 
 if (!fileExistsSync(ffmpeg)) {
   logger.error("ffmpeg not found. Install ffmpeg and make sure it's in your path.");
@@ -26,8 +26,8 @@ if (!fileExistsSync(ffprobe)) {
 }
 
 if (!fileExistsSync(filepicker)) {
-  logger.error("filepicker not found.");
-  console.error("filepicker not found.");
+  logger.error("vdhcoapp-filepicker not found.");
+  console.error("vdhcoapp-filepicker not found.");
   process.exit(1);
 }
 
