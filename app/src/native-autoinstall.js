@@ -39,7 +39,11 @@ function BuildManifests() {
   let manifest = {
     name: config.meta.id,
     description: config.meta.description,
-    path: process.execPath,
+    // If config has no "target" section, we are in RPM package and running
+    // application via system-installed node instead of a stand-alone
+    // executable. In that case, hard-code the path to point to launcher
+    // script.
+    path: config.hasOwnProperty("target") ? process.execPath : "/usr/bin/vdhcoapp",
   };
   const stores = {};
   for (let store in config.store) {
