@@ -7,7 +7,7 @@ function info() {
     id: config.meta.id,
     name: config.meta.name,
     version: config.meta.version,
-    binary: process.execPath,
+    binary: config.hasOwnProperty("target") ? process.execPath : "/usr/bin/vdhcoapp",
     displayName: config.meta.name,
     description: config.meta.description,
     target: {

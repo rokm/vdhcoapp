@@ -143,7 +143,7 @@ async function SetupFiles(platform, mode, uninstall) {
 }
 
 async function PrepareFlatpak() {
-  let install_dir = path.dirname(process.execPath);
+  let install_dir = path.dirname(config.hasOwnProperty("target") ? process.execPath : "/usr/bin/vdhcoapp");
   try {
     await exec_p("flatpak --version");
   } catch (_) {
